@@ -1,0 +1,82 @@
+//////////////////////////
+// -------CLASES------- //
+//////////////////////////
+.border-box{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.content-box{
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.translate-y(@a: -50%){
+  -webkit-transform: translateY(@a);
+  -ms-transform: translateY(@a);
+  transform: translateY(@a);
+}
+
+.transicion(@seconds: 1s) {
+  -webkit-transition: all @seconds;
+  -moz-transition: all @seconds;
+  -o-transition: all @seconds;
+  transition: all @seconds;
+}
+
+.transicion-tipo(@tipo, @seconds: 1s) {
+  -webkit-transition: @tipo @seconds;
+  -moz-transition: @tipo @seconds;
+  -o-transition: @tipo @seconds;
+  transition: @tipo @seconds;
+}
+
+.corner(@a: 5px, @b: 5px, @c: 5px, @d: 5px){
+  border-radius: @a @b @c @d;
+  -ms-border-radius: @a @b @c @d;
+  -moz-border-radius: @a @b @c @d;
+  -webkit-border-radius: @a @b @c @d;
+  -khtml-border-radius: @a @b @c @d;
+}
+
+.shadow(@a: 5px, @b: 5px, @c: 5px, @d:5px, @color: #000){
+  -webkit-box-shadow: @a @b @c @d @color;
+  -moz-box-shadow: @a @b @c @d @color;
+  box-shadow: @a @b @c @d @color;
+}
+
+.full-shadow(@a: 5px, @b: 5px, @c: 5px, @d:5px, @color1: #FFF ,@e: 5px, @f: 5px, @g:5px, @h:5px, @color2: #000){
+  -webkit-box-shadow: @a @b @c @d @color1, @e @f @g @h @color2;
+  -moz-box-shadow: @a @b @c @d @color1, @e @f @g @h @color2;
+  box-shadow: @a @b @c @d @color1, @e @f @g @h @color2;
+}
+
+.brillo(@valor: 0.2){
+  filter: brightness(@valor);
+  // Browser Specific
+  -webkit-filter: brightness(@valor);
+  -moz-filter: brightness(@valor);
+  -o-filter: brightness(@valor);
+  -ms-filter: brightness(@valor);
+}
+
+.rotar(@tiempo){
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: @tiempo;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: @tiempo;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: @tiempo;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: @tiempo;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

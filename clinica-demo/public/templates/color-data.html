@@ -1,0 +1,17 @@
+<div color-data>
+  <div class="modal-header">
+    <h1 class="modal-title">Registrar color</h1>
+  </div>
+  <div class="modal-body">
+    <form role="form">
+      <div class="form-group" ng-repeat="campo in dataFormulario.campos">
+        <label for="">// campo.label //</label>
+        <input ng-if="campo.formType == 'text'" type="text" class="form-control" id="" placeholder="// campo.placeholder //" ng-model="campo.value">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success" ng-click="submit()">Guardar</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancelar</button>
+  </div>
+</div>

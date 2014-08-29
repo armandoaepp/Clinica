@@ -1,0 +1,169 @@
+@import 'globales.less';
+@import 'parametros.less';
+
+.data-content{
+  .row.botonera{
+    padding: 8px;
+    background-color: @bkcl-data-1;
+    border-bottom: 1px solid @cl-data-1;
+    .titulo{
+      >h1{
+        margin: 10px 0px;
+        font-size: 25px;
+        font-weight: 300;
+        font-family: @font-1;
+        color: @cl-btn-1;
+      }
+    }
+    .acciones{
+      padding: 6px;
+      text-align: right;
+      .btn{
+        margin: 0px 2px;
+        padding: 0;
+        background: #FFF;
+        color: @cl-btn-1;
+        font-family: @font-1;
+        border: 1px solid @bdcl-btn-1;
+        .corner(0px, 0px, 0px, 0px);
+        .transicion(0.2s);
+        .nombre{
+          padding: 5px 10px 0px 10px;
+          float: left;
+          font-size: 12px;
+        }
+        .icono{
+          width: 30px;
+          margin: -1px 0px 0px 0px;
+          border-right: 1px solid @bdcl-btn-1;
+          float: left;
+          font-size: 11px;
+          line-height: 30px;
+          .transicion(0.2s);
+        }
+      }
+      .btn:hover{
+        color: #FFF;
+      }
+      .btn.agregar:hover{
+        background-color: @bkcl-1;
+        border: 1px solid @bkcl-1;
+        .icono{
+          background-color: @bkcl-1 * 0.9;
+          border-right: 1px solid @bkcl-1;
+        }
+      }
+      .btn.editar:hover{
+        background-color: @bkcl-2;
+        border: 1px solid @bkcl-2;
+        .icono{
+          background-color: @bkcl-2 * 0.9;
+          border-right: 1px solid @bkcl-2;
+        }
+      }
+      .btn.eliminar:hover{
+        background-color: @bkcl-3;
+        border: 1px solid @bkcl-3;
+        .icono{
+          background-color: @bkcl-3 * 0.9;
+          border-right: 1px solid @bkcl-3;
+        }
+      }
+    }
+  }
+  .row.registros{
+    background-color: @bkcl-data-2;
+    .cont-registros{
+      padding: 15px 0px;
+      .panel{
+        border: 1px solid @bdcl-reg-1;
+        .corner(0px, 0px, 0px, 0px);
+        overflow: hidden;
+        .panel-heading{
+          padding: 8px 15px;
+          background-color: @bkcl-reg-1;
+          .titulo{
+            font-family: @font-1;
+            color: @cl-reg-1;
+            font-size: 14px;
+          }
+        }
+        .tbl-registros{
+          font-family: @font-1;
+          border: 1px solid @bdcl-reg-1;
+          input[type="text"]{
+            padding: 4px 8px;
+            font-size: 12px;
+          }
+          tr{
+            td, th{
+              padding-left: 15px;
+            }
+          }
+          tr.tbl-busqueda{
+            td{
+              background-color: #FFF !important;
+            }
+          }
+          tr.tbl-cabecera{
+            color: @cl-reg-2;
+          }
+          tr.tbl-fila{
+            color: @cl-reg-2;
+            td{
+              border-color: @bdcl-reg-3;
+            }
+          }
+          tr.tbl-fila:hover{
+            cursor: pointer;
+            td{
+              background-color: @bdcl-reg-2 !important;
+            }
+          }
+          tr.tbl-fila.selected{
+            td{
+              background-color: @bdcl-reg-2 !important;
+            }
+          }
+        }
+        .tbl-registros.table-striped{
+          >tbody{
+            >tr:nth-child(odd){
+              >td, th{
+                background-color: @bkcl-reg-2;
+              }
+            }
+          }
+        }
+        .paginador{
+          padding: 10px 10px;
+          .info{
+            display: inline-block;
+            margin: 10px 0px 0px 6px;
+            font-family: @font-1;
+            font-size: 14px;
+            color: @cl-pag-1;
+          }
+          .pagination{
+            float: right;
+            margin: 0;
+            font-family: @font-1;
+            font-size: 14px;
+            li{
+              a{
+                color: @cl-pag-1;
+                border: 1px solid @bdcl-pag-1;
+                .corner(0px, 0px, 0px, 0px);
+              }
+              a.activo{
+                background-color: @bkcl-pag-1;
+                border: 1px solid @bdcl-pag-2;
+                color: #FFF;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

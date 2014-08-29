@@ -1,0 +1,119 @@
+<div data-extend-template="templates/layout-data.html">
+  <div data-block="botonera" ng-controller="BotoneraCtrl as botonera">
+    <div class="row">
+      <div class="col-lg-4 titulo">
+        <h1>Mantenedor de colores</h1>
+      </div>
+      <div class="col-lg-8 acciones">
+        <button type="button" class="btn btn-primary // boton.cParNombre.clase //" ng-repeat="boton in dataBotonera()" ng-click="accionar(boton.cParNombre.clase)">
+          <span class="// boton.cParNombre.icono // icono"></span>
+          <span class="nombre">// boton.cParNombre.nombre //</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div data-block="registros" ng-controller="RegistrosCtrl as registros">
+    <div class="cont-registros">
+      <div class="panel pane-default">
+        <div class="panel-heading">
+          <span class="titulo">Registros</span>
+        </div>
+        <table class="table table-striped tbl-registros">
+          <tr class="tbl-busqueda">
+            <td></td>
+            <td><input type="text" ng-model="camposBusqueda().cParDescripcion" ng-change="buscar(this)"></td>
+          </tr>
+          <tr class="tbl-cabecera">
+            <th>N°</th>
+            <th>Nombre</th>
+          </tr>
+          <tr ng-repeat="registro in dataRegistros()" ng-click="seleccionarRegistro(registro)" class="tbl-fila" ng-class="{selected: registro.selected}">
+            <td>// registro.index //</td>
+            <td>// registro.cParDescripcion //</td>
+          </tr>
+        </table>
+        <div class="row paginador" ng-controller="PaginadorCtrl as paginador">
+          <div class="col-lg-6">
+            <span class="info">// generarTextoPaginacion(dataRegistros()) //</span>
+          </div>
+          <div class="col-lg-6">
+            <ul class="pagination">
+              <li ng-repeat="boton in dataPaginador()">
+              <a href=""ng-click="paginar(boton)" ng-class="{activo: boton.activo}">// boton.texto //</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diálogo modal para envío de formulario -->
+    <div class="modal fade" id="modal-data" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Formulario de registro</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group" ng-repeat="campo in dataFormulario.campos">
+                <label for="">// campo.label //</label>
+                <input ng-if="campo.formType == 'text'" type="text" class="form-control" id="" placeholder="// campo.placeholder //" ng-model="formData[campo.name]">
+              </div>
+              <!-- Campos necesarios para actualizar -->
+              <input type="hidden" name="campoOculto.name" value="campoOculto.value" ng-repeat="campoOculto in formData.camposOcultos">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" ng-click="procesarForm(dataFormulario.accion[formAccion])">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diálogo modal para confirmación de eliminación -->
+    <div class="modal fade" id="modal-remove" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Eliminar</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+              <div class="form-group">
+                <h5>Eliminar?</h5>
+                <input type="hidden" name="campoOculto.name" value="campoOculto.value" ng-repeat="campoOculto in dataFormulario.camposOcultos">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" ng-click="procesarForm(dataFormulario.accion[formAccion])">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diálogo modal para alertas -->
+    <div class="modal fade" id="modal-alert" tabindex="-1" role="dialog" aria-labelledby="modal-alertLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="modal-alertLabel">Alerta</h4>
+          </div>
+          <div class="modal-body">
+            <h5>Debe seleccionar un registro</h5>
+            <input type="hidden" name="campoOculto.name" value="campoOculto.value" ng-repeat="campoOculto in dataFormulario.camposOcultos">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

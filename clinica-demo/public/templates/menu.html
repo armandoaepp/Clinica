@@ -1,0 +1,25 @@
+<accordion-heading>
+<div class="seccion">
+  <span class="icono // menu.objeto.cParNombre.icono.bsClase + ' ' + menu.objeto.cParNombre.icono.color //" ng-class="{'invisible': !menu.objeto.cParNombre.icono, 'glyphicon glyphicon-minus': !menu.objeto.cParNombre.icono}"></span>
+  <span class="nombre">// menu.objeto.NombreMenu //</span>
+</div>
+</accordion-heading>
+
+<accordion-group is-disabled="verificar(menu)" ng-repeat="menu in menu.subMenus">
+<div ng-if="menu.subMenus">
+  <accordion>
+  <div ng-include="'templates/menu.html'"></div>
+  </accordion>
+</div>
+<div ng-if="!menu.subMenus">
+  <accordion-heading>
+  <div class="seccion last" ng-click="go(menu.objeto.nombreRuta)">
+  <span class="icono // menu.objeto.cParNombre.icono.bsClase + ' ' + menu.objeto.cParNombre.icono.color //" ng-class="{'invisible': !menu.objeto.cParNombre.icono, 'glyphicon glyphicon-minus': !menu.objeto.cParNombre.icono}"></span>
+    <span class="nombre">// menu.objeto.NombreMenu //</span>
+  </div>
+</accordion-heading>
+</div>
+</accordion-group>
+
+
+

@@ -1,0 +1,95 @@
+.border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-box {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.btn:active:focus {
+  outline-color: transparent;
+}
+.btn-default {
+  background-color: #ffffff;
+  border-color: #dee5e7;
+}
+.btn-default:hover {
+  background-color: #f2f2f2;
+  border-color: #d3dadb;
+}
+.btn-warning {
+  background-color: #ee3939;
+  border-color: #ee3939;
+}
+.btn-warning:hover {
+  background-color: #d63333;
+  border-color: #d63333;
+}
+.btn-success {
+  background-color: #6254b2;
+  border-color: #6254b2;
+}
+.btn-success:hover {
+  background-color: #584ca0;
+  border-color: #584ca0;
+}
+.modal-dialog .modal-content {
+  border: none;
+  border-radius: 0px 0px 0px 0px;
+  -ms-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+  -webkit-box-shadow: 0px 0px 8px -2px #373737;
+  -moz-box-shadow: 0px 0px 8px -2px #373737;
+  box-shadow: 0px 0px 8px -2px #373737;
+}
+.modal-dialog .modal-content .modal-header {
+  padding: 10px 15px;
+  font-family: 'Source Sans Pro';
+  background-color: #f6f8f8;
+  border-color: #dee5e7;
+}
+.modal-dialog .modal-content .modal-header .modal-title {
+  color: #333333;
+  font-size: 14px;
+}
+.modal-dialog .modal-content .modal-body {
+  font-family: 'Source Sans Pro';
+}
+.modal-dialog .modal-content .modal-body .form-group {
+  margin-bottom: 10px;
+}
+.modal-dialog .modal-content .modal-body label {
+  color: #58666e;
+  font-weight: normal;
+  font-size: 14;
+}
+.modal-dialog .modal-content .modal-body .form-control {
+  color: #555555;
+  font-size: 14px;
+  border-color: #cfdadd;
+  border-radius: 0px 0px 0px 0px;
+  -ms-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+  -webkit-box-shadow: 0px 0px 0px 0px #000000;
+  -moz-box-shadow: 0px 0px 0px 0px #000000;
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+.modal-dialog .modal-content .modal-body .form-control:active {
+  border-color: #23b7e5;
+}
+.modal-dialog .modal-content .modal-footer .btn {
+  padding: 4px 10px;
+  font-family: 'Source Sans Pro';
+  font-size: 14px;
+  border-radius: 0px 0px 0px 0px;
+  -ms-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -khtml-border-radius: 0px 0px 0px 0px;
+}
